@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+Project Write-Up: QC Realty Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🌍 Project Overview
 
-## Available Scripts
+The goal of this project was to build a responsive, modern real estate website for a boutique agency named QC Realty. The site was built using React, with React Router for client-side navigation, and custom CSS for styling and animations.
 
-In the project directory, you can run:
+The homepage showcases key offerings (Buying, Selling, Renting), features a call-to-action section, property highlights, a contact form, and a footer with business details. Additional pages like "About Us" were planned using routing.
 
-### `npm start`
+✨ Features Implemented
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Navigation bar with site sections (Home, About Us, Contact)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Hero banner with business branding
 
-### `npm test`
+Three service cards (Buying/Selling/Renting) with:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Image hover effect showing "Discover"
 
-### `npm run build`
+Static label always visible underneath
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+"Explore QC Realty" section with company description and call-to-action
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Featured Homes horizontal scrolling section
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contact Us form with name, email, and message inputs
 
-### `npm run eject`
+Fully designed footer with quick links, business hours, and contact info
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+🚮 Challenges Encountered
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. File Naming Case Sensitivity
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Issue: Had HomePage.tsx but imported it as homePage, causing a case mismatch error on macOS.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Solution: Renamed imports and filenames to be consistently HomePage.
 
-## Learn More
+2. Routing Errors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Issue: Attempted to assign two components to the same path ("/") in React Router.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Solution: Gave each component a unique route (e.g., "/" for HomePage and "/about" for AboutUs).
+
+3. Navigation with <li> Elements
+
+Issue: Needed to make list items function as navigation links.
+
+Solution: Used React Router's <Link> to wrap each <li>, enabling navigation without page refresh.
+
+4. CSS Hover Effects
+
+Issue: Wanted "Discover" text to fade in on image hover while keeping "Buying/Selling/Renting" always visible.
+
+Solution: Created separate CSS classes: one for the fading hover label (.hover-label) and one for the static text (.static-label).
+
+5. Missing Modules & Imports
+
+Issue: Encountered Cannot find module errors.
+
+Solution: Verified file existence, naming, and corrected import paths.
+
+6. Understanding NPM
+
+Issue: Unsure what npm was and when to use it.
+
+Solution: Learned that npm install is used once per project to add dependencies like react-router-dom.
+
+📅 Next Steps
+
+Build out additional pages (e.g., About Us, Services, Listings)
+
+Add interactivity to Featured Homes (e.g., image previews, modals)
+
+Connect the contact form to an email service or backend
+
+Implement responsiveness for mobile and tablet views
+
+📚 Lessons Learned
+
+React Router is powerful but requires strict structure
+
+File naming consistency is critical in TypeScript/React projects
+
+CSS effects can greatly enhance UX but should be clearly separated in logic
+
+Documenting errors and fixes helps speed up future development
+

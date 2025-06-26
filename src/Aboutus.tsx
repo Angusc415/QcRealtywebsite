@@ -1,12 +1,12 @@
 import './Aboutus.css';
-import logo from './/Logo.jpg';
+import logo from './images/Logo.jpg';
 import {Link} from 'react-router-dom'
-import iconSell from './icon-sell.png';
-import iconBuy from './icon-buy.png';
-import iconInvest from './icon-invest.png';
-import iconBuyerAgent from './icon-buyeragent.png';
-import iconOffPlan from './icon-offplan.png';
-import iconHouseAndLand from './icon-houseandland.png';
+import iconSell from './images/icon-sell.png';
+import iconBuy from './images/icon-buy.png';
+import iconInvest from './images/icon-invest.png';
+import iconBuyerAgent from './images/icon-buyeragent.png';
+import iconOffPlan from './images/icon-offplan.png';
+import iconHouseAndLand from './images/icon-houseandland.png';
 
 function Aboutus(){
     return (

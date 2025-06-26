@@ -1,8 +1,8 @@
 import './HomePage.css'; // Make sure the path is correct
-import buyingImage from './/buying.png'; // adjust path as needed
-import sellingImage from './/selling.jpg';
-import rentingImage from'.//renting.jpg';
-import logo from './/Logo.jpg';
+import buyingImage from './images/buying.png'; // adjust path as needed
+import sellingImage from './images/selling.jpg';
+import rentingImage from './images/renting.jpg';
+import logo from './images/Logo.jpg';
 import {Link} from "react-router-dom";
 
 

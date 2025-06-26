@@ -37,9 +37,8 @@
 
 
 .hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./aboutusbackground.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/aboutusbackground.jpg');
   background-size: cover;
-    background-attachment: fixed;
   background-position: top center;
   /* background-attachment: fixed; */
   color: white;

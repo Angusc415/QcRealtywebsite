@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     res.json(properties);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch properties' });
-  }
+  
 });
 
 // POST a new property

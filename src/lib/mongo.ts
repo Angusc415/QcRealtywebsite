@@ -1,19 +1,30 @@
-import { MongoClient, Db } from 'mongodb';
+// src/lib/mongo.ts
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const uri = process.env.MONGODB_URI || 'mongodb+srv://anguschou88:kmHRwjiT8ti05xMV@cluster0.swdg6jd.mongodb.net/QC?retryWrites=true&w=majority';
-const dbName = 'QC';
+dotenv.config(); // Load environment variables from .env
 
-let client: MongoClient;
-let db: Db;
+const uri = process.env.MONGODB_URI;
 
-export async function connectToDatabase(): Promise<Db> {
-  if (db) return db;
+if (!uri) {
+  throw new Error('Please define the MONGODB_URI environment variable inside .env');
+}
 
-  if (!client) {
-    client = new MongoClient(uri);
-    await client.connect();
+let cached = (global as any).mongoose;
+
+if (!cached) {
+  cached = (global as any).mongoose = { conn: null, promise: null };
+}
+
+export async function connectToDatabase(): Promise<typeof mongoose> {
+  if (cached.conn) {
+    return cached.conn;
   }
 
-  db = client.db(dbName);
-  return db;
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(uri!);
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
 }

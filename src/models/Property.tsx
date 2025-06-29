@@ -23,15 +23,3 @@ export default mongoose.models.Property || mongoose.model('Property', PropertySc
 
 
 
-
-
-export interface Property {
-  address: string;
-  price: number;
-  bedrooms?: number;
-  bathrooms?: number;
-  garage?: number;
-  propertytype?: string;
-  squarefeet?: number;
-  description?: string;
-}

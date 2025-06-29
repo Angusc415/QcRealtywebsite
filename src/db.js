@@ -1,7 +1,10 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
+dotenv.config();
+console.log("MONGODB_URI is:", process.env.MONGODB_URI);
 
 // Your connection URI from MongoDB Atlas (replace with your own)
-const uri = "mongodb+srv://anguschou88:kmHRwjiT8ti05xMV@cluster0.swdg6jd.mongodb.net/QC?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri);
 
@@ -28,8 +31,6 @@ async function connectDB() {
     await client.close();
   }
 }
-console.log("Hello from db.ts!");
-
-export {};
+console.log("Hello from db.js!");
 
 connectDB();

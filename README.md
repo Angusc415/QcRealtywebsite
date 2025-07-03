@@ -13,6 +13,7 @@ A modern, full-stack commercial real estate web application built with **TypeScr
 - [Environment Variables](#environment-variables)
 - [API Endpoints](#api-endpoints)
 - [Development Notes](#development-notes)
+- [Common Problems & Solutions](#common-problems--solutions)
 - [License](#license)
 
 ---
@@ -146,6 +147,39 @@ Test endpoint:
 - The backend only starts after a successful MongoDB connection.
 - All TypeScript configuration files (`tsconfig.json`) are split between frontend and backend for best practices.
 - The backend model files use `.ts` (not `.tsx`).
+
+---
+
+## Common Problems & Solutions
+
+### 1. TypeScript/Node Import Errors
+- **Problem:** `Module '../models/Property' was resolved to ...Property.tsx, but '--jsx' is not set.`
+- **Solution:** Rename backend model files from `.tsx` to `.ts`.
+
+### 2. Cannot Find Module 'cors'
+- **Problem:** `Cannot find module 'cors' or its corresponding type declarations.`
+- **Solution:** Run `npm install cors` and `npm install --save-dev @types/cors` in the backend directory.
+
+### 3. Failed to Fetch (Frontend-Backend Communication)
+- **Problem:** React app cannot connect to backend API (`Failed to fetch`).
+- **Solution:**
+  - Ensure the backend server is running (`npm start` in backend).
+  - Check that API URLs in the frontend point to the correct backend port (e.g., `http://localhost:3001`).
+  - Make sure CORS is enabled in the backend.
+
+### 4. npm install Errors (ENOENT, EJSONPARSE)
+- **Problem:** `npm install` fails due to missing or invalid `package.json`.
+- **Solution:**
+  - Ensure each of `frontend/` and `backend/` has its own valid `package.json`.
+  - Delete any obsolete root-level `package.json` and `package-lock.json` after splitting.
+
+### 5. TypeScript Implicit 'any' Errors
+- **Problem:** `TS7006: Parameter 'url' implicitly has an 'any' type.`
+- **Solution:** Add explicit types to all function parameters in arrow functions (e.g., `(url: string, idx: number) => ...`).
+
+### 6. Express Server Not Starting
+- **Problem:** Server starts before MongoDB connection is established.
+- **Solution:** Move `app.listen` inside the `.then()` callback of your DB connection promise.
 
 ---
 

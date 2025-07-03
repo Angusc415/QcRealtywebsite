@@ -16,12 +16,15 @@ import stella from './images/stella-sales-agent.jpg';
 import bannie from './images/bannie-huang-marketing-specialist.jpg';
 import zoe from './images/zoe-sheung-admin.jpg';
 
+
 function Aboutus(){
     return (
+        //parent container for the about us page
         <div className="about-us-page">
             <div className="header">
                 <ul className="nav" style={{ listStyleType: 'none'}}>
                     <li><img src={logo} alt="Logo" className="logo" /></li>
+                    {/* links to the homepage and about us page */}
                     <Link to='/homepage'><li>Home</li></Link>
                     <Link to="/aboutus"><li>About Us</li></Link>
                     <li>Projects</li>

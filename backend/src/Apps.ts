@@ -2,11 +2,11 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './lib/mongo';
 import propertyRoutes from './routes/properties';
+import cloudinary from './lib/cloudinary';
 import cors from 'cors';
 
 dotenv.config();
 const app = express();
-
 // Use CORS middleware
 app.use(cors({ origin: 'http://localhost:3000' }));
 

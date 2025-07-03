@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import parser from '../lib/multer';
+
 
 // TypeScript interface for Property
 export interface IProperty {

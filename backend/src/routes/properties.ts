@@ -1,11 +1,21 @@
 import express from 'express';
 import Property from '../models/Property';
+import parser from '../lib/multer';
 
 const router = express.Router();
 
 // Test endpoint
 router.get('/test', (req, res) => {
   res.json({ message: 'Properties route is working!' });
+});
+
+// Image upload endpoint for Cloudinary
+router.post('/upload', parser.array('image'), (req, res) => {
+  if (!req.files || (Array.isArray(req.files) && req.files.length === 0)) {
+    return res.status(400).json({ error: 'No files uploaded' });
+  }
+  const urls = (req.files as any[]).map(file => file.path);
+  res.json({ urls });
 });
 
 // GET all properties

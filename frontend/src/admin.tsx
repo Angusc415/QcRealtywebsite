@@ -36,6 +36,9 @@ function Admin() {
     description: ''
   });
 
+  // Replace single file state with multiple files
+  const [selectedImages, setSelectedImages] = useState<File[]>([]);
+
   const API_BASE_URL = 'http://localhost:3001/api/properties';
 
   // Fetch all properties
@@ -56,14 +59,48 @@ function Admin() {
     }
   };
 
+  // Update file input handler for multiple files
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setSelectedImages(Array.from(e.target.files));
+    }
+  };
+
+  // Function to upload multiple images to backend (Cloudinary)
+  const uploadImages = async (images: File[]): Promise<string[]> => {
+    const urls: string[] = [];
+    for (const image of images) {
+      const formData = new FormData();
+      formData.append('image', image);
+      const response = await fetch('http://localhost:3001/api/properties/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      urls.push(data.url);
+    }
+    return urls;
+  };
+
   // Add new property
   const addProperty = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Clean imageUrls before sending
+    let imageUrls = formData.imageUrls.filter((url: string) => url.trim() !== '');
+    // If new images are selected, upload them
+    if (selectedImages.length > 0) {
+      try {
+        const uploadedUrls = await uploadImages(selectedImages);
+        imageUrls = [...imageUrls, ...uploadedUrls];
+      } catch (err) {
+        setMessage('Image upload failed');
+        setLoading(false);
+        return;
+      }
+    }
     const cleanedFormData = {
       ...formData,
-      imageUrls: formData.imageUrls.filter((url: string) => url.trim() !== '')
+      imageUrls,
     };
     try {
       const response = await fetch(API_BASE_URL, {
@@ -94,10 +131,21 @@ function Admin() {
     e.preventDefault();
     if (!editingProperty?._id) return;
     setLoading(true);
-    // Clean imageUrls before sending
+    let imageUrls = formData.imageUrls.filter((url: string) => url.trim() !== '');
+    // If new images are selected, upload them
+    if (selectedImages.length > 0) {
+      try {
+        const uploadedUrls = await uploadImages(selectedImages);
+        imageUrls = [...imageUrls, ...uploadedUrls];
+      } catch (err) {
+        setMessage('Image upload failed');
+        setLoading(false);
+        return;
+      }
+    }
     const cleanedFormData = {
       ...formData,
-      imageUrls: formData.imageUrls.filter((url: string) => url.trim() !== '')
+      imageUrls,
     };
     try {
       const response = await fetch(`${API_BASE_URL}/${editingProperty._id}`, {
@@ -339,6 +387,16 @@ function Admin() {
                   )}
                 </div>
               ))}
+            </div>
+
+            <div className="form-group">
+              <label>Upload Images</label>
+              <input
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleImageChange}
+              />
             </div>
 
             <div className="form-group">

@@ -2,20 +2,22 @@
     "name": "qcrealty-backend",
     "version": "0.1.0",
     "private": true,
-    "type": "module",
+    "type": "commonjs",
     "dependencies": {
-      "dotenv": "^16.6.1",
-      "express": "^5.1.0",
-      "mongodb": "^6.17.0",
-      "mongoose": "^8.16.1"
+        "cors": "^2.8.5",
+        "dotenv": "^16.6.1",
+        "express": "^5.1.0",
+        "mongodb": "^6.17.0",
+        "mongoose": "^8.16.1"
     },
     "devDependencies": {
-      "@types/express": "^4.17.23",
-      "ts-node": "^10.9.2",
-      "tsx": "^4.20.3",
-      "typescript": "^5.8.3"
+        "@types/cors": "^2.8.19",
+        "@types/express": "^4.17.23",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.20.3",
+        "typescript": "^5.8.3"
     },
     "scripts": {
-      "start": "ts-node src/Apps.ts"
+        "start": "ts-node src/Apps.ts"
     }
-  }
+}

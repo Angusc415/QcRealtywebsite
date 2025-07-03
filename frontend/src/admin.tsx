@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './admin.css';
-import { IProperty } from './models/Property';
+
+interface IProperty {
+  _id?: string;
+  address: string;
+  price: string;
+  bedroom: number;
+  bathroom: number;
+  garage: number;
+  propertytype: string;
+  imageUrls: string[];
+  status: string;
+  description: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
 
 function Admin() {
   const [properties, setProperties] = useState<IProperty[]>([]);
@@ -48,7 +63,7 @@ function Admin() {
     // Clean imageUrls before sending
     const cleanedFormData = {
       ...formData,
-      imageUrls: formData.imageUrls.filter(url => url.trim() !== '')
+      imageUrls: formData.imageUrls.filter((url: string) => url.trim() !== '')
     };
     try {
       const response = await fetch(API_BASE_URL, {
@@ -82,7 +97,7 @@ function Admin() {
     // Clean imageUrls before sending
     const cleanedFormData = {
       ...formData,
-      imageUrls: formData.imageUrls.filter(url => url.trim() !== '')
+      imageUrls: formData.imageUrls.filter((url: string) => url.trim() !== '')
     };
     try {
       const response = await fetch(`${API_BASE_URL}/${editingProperty._id}`, {
@@ -191,7 +206,7 @@ function Admin() {
   };
   const removeImageUrlField = (idx: number) => {
     setFormData(prev => {
-      const newUrls = prev.imageUrls.filter((_, i) => i !== idx);
+      const newUrls = prev.imageUrls.filter((_: string, i: number) => i !== idx);
       return { ...prev, imageUrls: newUrls.length > 0 ? newUrls : [''] };
     });
   };
@@ -306,7 +321,7 @@ function Admin() {
 
             <div className="form-group">
               <label>Image URLs</label>
-              {formData.imageUrls.map((url, idx) => (
+              {formData.imageUrls.map((url: string, idx: number) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', marginBottom: '0.5rem' }}>
                   <input
                     type="url"
@@ -369,7 +384,7 @@ function Admin() {
                 <div key={property._id} className="property-card">
                   {property.imageUrls && property.imageUrls.length > 0 && (
                     <div className="property-images-row">
-                      {property.imageUrls.map((url, idx) => (
+                      {property.imageUrls.map((url: string, idx: number) => (
                         <img key={idx} src={url} alt={property.address + ' image ' + (idx + 1)} className="property-image" style={{ maxWidth: '100px', maxHeight: '80px', marginRight: '0.5rem', borderRadius: '6px' }} />
                       ))}
                     </div>

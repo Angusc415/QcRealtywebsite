@@ -1,0 +1,517 @@
+.about-us-page {
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+}
+
+.aboutustitle {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 1.5rem 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #631400 0%, #4a0f00 100%);
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutustitle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/aboutusbackground.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 3rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+.hero-section p {
+  font-size: 2.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whoarewe {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e0e0e0 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.whoarewe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #631400, #4a0f00);
+}
+
+.whoarewep {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  font-weight: 400;
+}
+
+.whoarewe h2 {
+  margin: 0 0 2rem 0;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.whoarewe h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #631400, #4a0f00);
+  border-radius: 2px;
+}
+
+.whatmakesusdifferent {
+  background: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.whatmakesusdifferent h2 {
+  margin: 0 0 3rem 0;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.whatmakesusdifferent h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #631400, #4a0f00);
+  border-radius: 2px;
+}
+
+.whatmakesusdifferent ul {
+  list-style: none;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.whatmakesusdifferent li {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.whatmakesusdifferent li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #631400, #4a0f00);
+}
+
+.whatmakesusdifferent li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.whatmakesusdifferent strong {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+
+
+/* Founder section */
+.founder{
+  text-align: center;
+  text-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 5rem;
+  padding-right: 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  font-weight: 400;
+}
+
+.founderimg{
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+
+}
+
+@media (max-width: 900px) {
+  .founder-section {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .founderimg {
+    height: 220px;
+  }
+  .founder {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.letsworktogether {
+  background: linear-gradient(135deg, #631400 0%, #4a0f00 100%);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.letsworktogether::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+}
+
+.letsworktogether h2 {
+  margin: 0 0 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.letsworktogether h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.letsworktogether p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.contact-link {
+  display: inline-block;
+  color: #631400;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 20, 0, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #631400;
+}
+
+.contact-link:hover::before {
+  left: 100%;
+}
+
+/* Header styling */
+.header {
+  background: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .aboutustitle {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .hero-section p {
+    font-size: 1.8rem;
+  }
+  
+  .whoarewe h2,
+  .whatmakesusdifferent h2,
+  .letsworktogether h2 {
+    font-size: 2rem;
+  }
+  
+  .whatmakesusdifferent ul {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.info-block {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e0e0e0 100%);
+  border-left: 6px solid #631400;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin: 3rem auto 3rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 24px rgba(99, 20, 0, 0.08);
+}
+.info-block h2 {
+  color: #631400;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.info-block ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  padding-left: 1.2rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+.info-block p {
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 2rem 1rem;
+}
+.service-item {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(99, 20, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 260px;
+}
+.service-item:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(99, 20, 0, 0.15);
+}
+.service-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 2px 8px rgba(99, 20, 0, 0.10));
+}
+.service-item p {
+  color: #2c3e50;
+  font-size: 1.08rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .info-block {
+    padding: 1.2rem 0.7rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1rem 0.2rem;
+    max-width: 900px;
+  }
+  .service-item {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+    min-height: 180px;
+  }
+  .service-item img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.ourteamh2{
+  text-align: center;
+  padding-top: 10rem;
+  font-size: 3rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.team-card {
+  background: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(99, 20, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+}
+.team-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 0;
+  box-shadow: none;
+  display: block;
+}
+.team-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(40, 20, 20, 0.65);
+  color: #fff;
+  padding: 0.5rem 0.7rem 0.3rem 0.7rem;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.team-card-overlay h3 {
+  margin: 0 0 0.1rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+}
+.team-card-overlay p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .team-card {
+    height: 200px;
+  }
+}

@@ -1,0 +1,619 @@
+/* ===== General Setup ===== */
+.homePagebackground {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Logo ===== */
+.logo {
+  height: 6rem;
+  width: auto;
+  object-fit: contain;
+  padding-left: 0;
+}
+
+/* ===== Navigation Bar ===== */
+.nav {
+  width: 100%;
+  background-color: #631400;
+  height: 6.5rem;
+  margin: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  color: white;
+  font-size: 1.25rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.nav li:hover {
+  color: #ffcccc;
+  transform: translateY(-2px);
+}
+
+.listend {
+  padding-right: 2rem;
+}
+
+/* ===== Title Banner ===== */
+.titleBanner {
+  width: 100%;
+  height: 500px;
+  font-size: x-large;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  background-image: url('./images/brisbane.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+.titleBannerText1,
+.titleBannerText2 {
+  padding-left: 2rem;
+}
+
+/* ===== Buying/Selling/Renting Section ===== */
+.buyingsellingrenting {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.image-card {
+  text-align: center;
+  position: relative;
+  width: 20rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
+.hover-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-container:hover .hover-label {
+  opacity: 1;
+}
+
+.static-label {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* ===== About Us Section ===== */
+.aboutUs {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #828282;
+  padding: 2rem;
+}
+
+.aboutUsh1 {
+  font-family: 'Playfair Display', serif;
+  animation: fadeInUp 1.5s ease-out forwards;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.aboutUsp {
+  width: 35%;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.aboutUs button {
+  background-color: #631400;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.aboutUs button:hover {
+  background-color: #4a0f00;
+}
+
+/* ===== Featured Homes Section ===== */
+#featured-homes {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+#featured-homes h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  animation: fadeInUp 1.5s ease-out forwards;
+  color: #333;
+}
+
+.scrolling-bar {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.house {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInScale 1.3s ease-out forwards;
+  transition: transform 0.3s ease;
+}
+
+.house img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.house p {
+  margin: 10px 0 0;
+  font-size: 1em;
+  color: #333;
+}
+
+.house:hover {
+  transform: scale(1.05);
+}
+
+.featured-blurb {
+  font-size: 1.15rem;
+  color: #444;
+  margin: 1.5rem auto 2rem auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.featured-btn {
+  background: linear-gradient(135deg, #631400 0%, #a0522d 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(99, 20, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 1rem;
+}
+
+.featured-btn:hover {
+  background: linear-gradient(135deg, #a0522d 0%, #631400 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* ===== Partner Associations Section ===== */
+#partnerassociations {
+  background: grey;
+  padding: 3rem 0 2.5rem 0;
+  text-align: center;
+}
+
+#partnerassociations h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+#partnerassociations p {
+  color: white;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+}
+
+.partner-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.partner-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(99, 20, 0, 0.07);
+  padding: 1.2rem 2.2rem;
+  min-width: 120px;
+  min-height: 80px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.partner-list li:hover {
+  box-shadow: 0 6px 24px rgba(99, 20, 0, 0.15);
+  transform: translateY(-4px) scale(1.04);
+}
+
+.partner-list img {
+  max-width: 100px;
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 0.2s;
+}
+
+.partner-list li:hover img {
+  filter: grayscale(0%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #partnerassociations {
+    padding: 2rem 0 1.5rem 0;
+  }
+  .partner-list {
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  .partner-list li {
+    padding: 0.7rem 1rem;
+    min-width: 80px;
+    min-height: 60px;
+  }
+  #partnerassociations h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===== Contact Us Section ===== */
+.contactuspage {
+  background-color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contactuspage h2 {
+  color: black;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contactForm label {
+  font-weight: bold;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  align-self: flex-start;
+  color: black;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: #710d0d;
+  outline: none;
+  box-shadow: 0 0 5px rgba(113, 13, 13, 0.3);
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: #999;
+  opacity: 0.7;
+}
+
+.contactForm button {
+  margin-top: 20px;
+  background-color: #710d0d;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.contactForm button:hover {
+  background-color: #5a0a0a;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #710d0d;
+  color: white;
+  padding: 3rem 5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 1.5rem;
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #ffcccc;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #ffcccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contact-info i {
+  margin-right: 0.8rem;
+  color: #ffcccc;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 2%;
+  }
+  
+  .nav ul {
+    gap: 1rem;
+  }
+  
+  .nav li {
+    font-size: 1rem;
+  }
+  
+  .titleBanner {
+    height: 400px;
+    font-size: large;
+  }
+  
+  .titleBannerText1,
+  .titleBannerText2 {
+    padding-left: 1rem;
+  }
+  
+  .buyingsellingrenting {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .image-card {
+    width: 100%;
+    max-width: 18rem;
+  }
+  
+  .aboutUsp {
+    width: 80%;
+  }
+  
+  .scrolling-bar {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  
+  .house {
+    min-width: 200px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-section {
+    min-width: auto;
+  }
+}

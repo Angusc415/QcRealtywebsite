@@ -30,6 +30,7 @@ router.get('/', async (req, res) => {
 
 // POST a new property
 router.post('/', async (req, res) => {
+  
   try {
     const newProperty = new Property(req.body);
     await newProperty.save();

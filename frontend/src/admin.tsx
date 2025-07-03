@@ -77,7 +77,15 @@ function Admin() {
         body: formData,
       });
       const data = await response.json();
-      urls.push(data.url);
+      // If backend returns { urls: [...] }
+      if (Array.isArray(data.urls)) {
+        urls.push(...data.urls);
+      } else if (data.url) {
+        urls.push(data.url);
+      } else {
+        // fallback: log error
+        console.log('Upload response missing urls:', data);
+      }
     }
     return urls;
   };
@@ -110,7 +118,7 @@ function Admin() {
         },
         body: JSON.stringify(cleanedFormData),
       });
-      
+      console.log('Submitting property:', cleanedFormData);
       if (response.ok) {
         const newProperty = await response.json();
         setProperties([...properties, newProperty]);
@@ -252,6 +260,7 @@ function Admin() {
   const addImageUrlField = () => {
     setFormData(prev => ({ ...prev, imageUrls: [...prev.imageUrls, ''] }));
   };
+
   const removeImageUrlField = (idx: number) => {
     setFormData(prev => {
       const newUrls = prev.imageUrls.filter((_: string, i: number) => i !== idx);
@@ -376,7 +385,7 @@ function Admin() {
                     name="imageUrls"
                     value={url}
                     onChange={e => handleInputChange(e, idx)}
-                    placeholder={`Image URL #${idx + 1}`}
+                    placeholder={`Image URL (optional)`}
                     style={{ flex: 1 }}
                   />
                   {formData.imageUrls.length > 1 && (

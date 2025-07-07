@@ -172,10 +172,10 @@
 }
 
 .properties-section {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 2.5rem 2.2rem;
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(102, 126, 234, 0.08);
 }
 
 .properties-section h2 {
@@ -218,8 +218,12 @@
 
 .properties-grid {
   display: grid;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  max-height: 700px; /* adjust as needed */
+  overflow-y: auto;
+  padding-right: 0.5rem; /* for scrollbar space */
 }
 
 .property-card {

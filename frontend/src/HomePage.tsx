@@ -27,7 +27,7 @@ function HomePage() {
           <li>Home</li>
           <Link to="/aboutus"><li>About Us</li></Link>
           <li>Projects</li>
-          <li>Contact Us</li>
+          <Link to='/Contactus'><li>Contact Us</li></Link>
         </ul>
       </div>
 

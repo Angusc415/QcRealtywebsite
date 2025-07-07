@@ -78,6 +78,7 @@
 .titleBannerText1,
 .titleBannerText2 {
   padding-left: 2rem;
+  colour: white;
 }
 
 /* ===== Buying/Selling/Renting Section ===== */
@@ -319,7 +320,6 @@
   box-shadow: 0 6px 24px rgba(99, 20, 0, 0.15);
   transform: translateY(-4px) scale(1.04);
 }
-
 .partner-list img {
   max-width: 100px;
   max-height: 50px;

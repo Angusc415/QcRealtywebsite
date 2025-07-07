@@ -22,6 +22,7 @@ function Admin() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [editingProperty, setEditingProperty] = useState<IProperty | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
   
   // Form state for adding/editing properties
   const [formData, setFormData] = useState<Omit<IProperty, '_id' | 'createdAt' | 'updatedAt'>>({
@@ -139,7 +140,9 @@ function Admin() {
     e.preventDefault();
     if (!editingProperty?._id) return;
     setLoading(true);
-    let imageUrls = formData.imageUrls.filter((url: string) => url.trim() !== '');
+    let imageUrls = formData.imageUrls.filter(
+      (url: string | null | undefined) => typeof url === 'string' && url.trim() !== ''
+    );
     // If new images are selected, upload them
     if (selectedImages.length > 0) {
       try {
@@ -267,6 +270,16 @@ function Admin() {
       return { ...prev, imageUrls: newUrls.length > 0 ? newUrls : [''] };
     });
   };
+
+  // Filter properties based on search term
+  const filteredProperties = properties.filter(property => {
+    const term = searchTerm.toLowerCase();
+    return (
+      property.address.toLowerCase().includes(term) ||
+      property.propertytype.toLowerCase().includes(term) ||
+      property.status.toLowerCase().includes(term)
+    );
+  });
 
   // Load properties on component mount
   useEffect(() => {
@@ -421,6 +434,22 @@ function Admin() {
               />
             </div>
 
+            <div className="form-group">
+              <label htmlFor="status">Status *</label>
+              <select
+                id="status"
+                name="status"
+                value={formData.status}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="for sale">For Sale</option>
+                <option value="under contract">Under Contract</option>
+                <option value="sold">Sold</option>
+                <option value="off market">Off Market</option>
+              </select>
+            </div>
+
             <div className="form-actions">
               <button type="submit" disabled={loading}>
                 {loading ? 'Saving...' : (editingProperty ? 'Update Property' : 'Add Property')}
@@ -436,18 +465,25 @@ function Admin() {
 
         {/* Properties List */}
         <div className="properties-section">
-          <h2>All Properties ({properties.length})</h2>
+          <h2>All Properties ({filteredProperties.length})</h2>
+          <input
+            type="text"
+            placeholder="Search by address, type, or status..."
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+            style={{ marginBottom: '1.2rem', padding: '0.7rem', width: '100%', borderRadius: '8px', border: '1.5px solid #e0e7ef', fontSize: '1rem' }}
+          />
           <button onClick={fetchProperties} disabled={loading} className="refresh-btn">
             {loading ? 'Loading...' : 'Refresh'}
           </button>
           
           {loading ? (
             <div className="loading">Loading properties...</div>
-          ) : properties.length === 0 ? (
+          ) : filteredProperties.length === 0 ? (
             <div className="no-properties">No properties found. Add your first property above!</div>
           ) : (
             <div className="properties-grid">
-              {properties.map((property) => (
+              {filteredProperties.map((property) => (
                 <div key={property._id} className="property-card">
                   {property.imageUrls && property.imageUrls.length > 0 && (
                     <div className="property-images-row">

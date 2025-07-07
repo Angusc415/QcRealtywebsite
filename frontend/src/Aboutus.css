@@ -321,47 +321,52 @@
   color: #631400;
 }
 
-.contact-link:hover::before {
-  left: 100%;
+/* ===== Founder Highlight ===== */
+.about-founder-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  background: #fff;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
 }
-
-/* Header styling */
-.header {
-  background: white;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.about-founder-img-wrap {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
 }
-
-
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .aboutustitle {
-    font-size: 2rem;
-    padding: 1rem 0;
-  }
-  
-  .hero-section p {
-    font-size: 1.8rem;
-  }
-  
-  .whoarewe h2,
-  .whatmakesusdifferent h2,
-  .letsworktogether h2 {
-    font-size: 2rem;
-  }
-  
-  .whatmakesusdifferent ul {
-    grid-template-columns: 1fr;
-    max-width: 900px;
-  }
-  
-  .nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.about-founder-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(99, 20, 0, 0.10);
+}
+.about-founder-content {
+  flex: 2 1 400px;
+  min-width: 250px;
+}
+.about-founder-content h2 {
+  color: #631400;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+.about-founder-content p {
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.about-founder-content blockquote {
+  font-size: 1.2rem;
+  color: #a0522d;
+  font-style: italic;
+  margin: 1.5rem 0 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid #631400;
 }
 
 .info-block {

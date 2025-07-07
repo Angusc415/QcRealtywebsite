@@ -106,16 +106,18 @@ function Aboutus(){
                 </div>
             </section>
 
-<section className="founder">
-                <h2 className="founderh2">Founded On Proven Success</h2>
-                <p className="founderp">Our founder and principal Shanny Zhao has more than a decade of experience in property, and has been recognised as a leader in real estate as a recipient of the Australian Top #1 Sale award for eight consecutive years.
-
-With a personal sales value nearing $500 million and having helped thousands of customers to purchase property in Australia, Shanny's depth of experience brings significant advantage to her customers.
-
-Her goals are simple and centre on connecting her customers with properties that match their needs perfectly, and building lifelong relationships with the customers she serves.
-</p>
-<img src={founder} alt="Founder" className="founderimg" />
-</section>
+      {/* Founder Highlight */}
+      <section className="about-founder-section">
+        <div className="about-founder-img-wrap">
+          <img src={founder} alt="Founder" className="about-founder-img" />
+        </div>
+        <div className="about-founder-content">
+          <h2>Founded On Proven Success</h2>
+          <p>Our founder and principal Shanny Zhao has more than a decade of experience in property, and has been recognised as a leader in real estate as a recipient of the Australian Top #1 Sale award for eight consecutive years.</p>
+          <p>With a personal sales value nearing $500 million and having helped thousands of customers to purchase property in Australia, Shanny's depth of experience brings significant advantage to her customers.</p>
+          <blockquote>“My goal is simple: connect my customers with properties that match their needs perfectly, and build lifelong relationships with the customers I serve.”</blockquote>
+        </div>
+      </section>
 
 <section className="ourteam">
                 <h2 className="ourteamh2">Meet Our Team</h2>

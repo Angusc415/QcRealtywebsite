@@ -124,6 +124,9 @@ function HomePage() {
           <li><img src={partner5} alt="partner5" /></li>
           <li><img src={partner6} alt="partner6" /></li>
           <li><img src={partner7} alt="partner7" /></li>
+          <li><img src={partner8} alt="partner8" /></li>
+          <li><img src={partner9} alt="partner8" /></li>
+
         </ul>
       </section>
   
@@ -158,10 +161,10 @@ function HomePage() {
       <h3>QC Realty</h3>
       <p>More than property - we're your partners in finding the perfect place to call home.</p>
       <div className="social-icons">
-        <a href="#"><i className="fab fa-facebook-f"></i></a>
-        <a href="#"><i className="fab fa-instagram"></i></a>
-        <a href="#"><i className="fab fa-linkedin-in"></i></a>
-        <a href="#"><i className="fab fa-twitter"></i></a>
+        <a href="/"><i className="fab fa-facebook-f"></i></a>
+        <a href="/"><i className="fab fa-instagram"></i></a>
+        <a href="/"><i className="fab fa-linkedin-in"></i></a>
+        <a href="/"><i className="fab fa-twitter"></i></a>
       </div>
     </div>
     

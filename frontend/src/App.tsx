@@ -5,6 +5,7 @@ import Aboutus from './Aboutus';
 import Admin from './admin';
 import Buying from './buying';
 import Contactus from './Contactus'
+//import PropertyDetail from './PropertyDetail'
 
 function App() {
   return (

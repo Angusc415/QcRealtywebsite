@@ -4,7 +4,8 @@ import HomePage from './HomePage';
 import Aboutus from './Aboutus';
 import Admin from './admin';
 import Buying from './buying';
-import Contactus from './Contactus'
+import Contactus from './Contactus';
+import Renting from './Renting';
 //import PropertyDetail from './PropertyDetail'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/buying" element={<Buying />} />
         <Route path ="/Contactus" element={<Contactus />} />
+        <Route path ="/Renting" element={<Renting />} />
       </Routes>
     </Router>
   );

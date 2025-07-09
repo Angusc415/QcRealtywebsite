@@ -73,10 +73,10 @@ function HomePage() {
   
   <div className="image-card">
     <div className="image-container">
-      <img src={rentingImage} alt="Renting" />
+    <Link to='/Renting'> <img src={rentingImage} alt="Renting" /></Link>
       <div className="hover-label">Discover</div>
     </div>
-    <div className="static-label">Renting</div>
+  < div className="static-label">Renting</div>
   </div>
 </section>
 
@@ -160,12 +160,12 @@ function HomePage() {
     <div className="footer-section">
       <h3>QC Realty</h3>
       <p>More than property - we're your partners in finding the perfect place to call home.</p>
-      <div className="social-icons">
+      {/* <div className="social-icons">
         <a href="/"><i className="fab fa-facebook-f"></i></a>
         <a href="/"><i className="fab fa-instagram"></i></a>
         <a href="/"><i className="fab fa-linkedin-in"></i></a>
         <a href="/"><i className="fab fa-twitter"></i></a>
-      </div>
+      </div> */}
     </div>
     
     <div className="footer-section">

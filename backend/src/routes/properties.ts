@@ -21,7 +21,14 @@ router.post('/upload', parser.array('image'), (req, res) => {
 // GET all properties
 router.get('/', async (req, res) => {
   try {
-    const properties = await Property.find();
+    const { status } = req.query;
+    let filter: any = {};
+    
+    if (status) {
+      filter.status = status;
+    }
+    
+    const properties = await Property.find(filter);
     res.json(properties);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch properties' });

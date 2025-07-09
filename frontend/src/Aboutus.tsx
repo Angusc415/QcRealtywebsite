@@ -22,15 +22,15 @@ function Aboutus(){
         //parent container for the about us page
         <div className="about-us-page">
             <div className="header">
-                <ul className="nav" style={{ listStyleType: 'none'}}>
-                    <li><img src={logo} alt="Logo" className="logo" /></li>
-                    {/* links to the homepage and about us page */}
-                    <Link to='/homepage'><li>Home</li></Link>
-                    <Link to="/aboutus"><li>About Us</li></Link>
-                    <li>Projects</li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
+        <ul className="nav" style={{ listStyleType: 'none'}}>
+          <li><img src={logo} alt="Logo" className="logo" /></li>
+          <Link to='/HomePage'><li>Home</li></Link>
+          <Link to="/aboutus"><li>About Us</li></Link>
+          <li>Projects</li>
+          <Link to='/Contactus'><li>Contact Us</li></Link>
+        </ul>
+      </div>
+
 
            <h1 className="aboutustitle">About Us</h1>
 

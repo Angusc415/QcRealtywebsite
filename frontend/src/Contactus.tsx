@@ -11,15 +11,16 @@ function Contactus() {
   return (
     
     <div className="contact-page">
-        <div className="header">
+       <div className="header">
         <ul className="nav" style={{ listStyleType: 'none'}}>
           <li><img src={logo} alt="Logo" className="logo" /></li>
-          <li>Home</li>
+          <Link to='/HomePage'><li>Home</li></Link>
           <Link to="/aboutus"><li>About Us</li></Link>
           <li>Projects</li>
-          <li>Contact Us</li>
+          <Link to='/Contactus'><li>Contact Us</li></Link>
         </ul>
       </div>
+
       {/* Hero Section */}
       <section className="contact-hero-section">
         <div className="contact-hero-overlay" />

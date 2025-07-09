@@ -447,6 +447,7 @@ function Admin() {
                 <option value="under contract">Under Contract</option>
                 <option value="sold">Sold</option>
                 <option value="off market">Off Market</option>
+                <option value="for rent">For Rent</option>
               </select>
             </div>
 

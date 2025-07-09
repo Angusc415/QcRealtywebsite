@@ -24,7 +24,7 @@ function Buying() {
   const [bathFilter, setBathFilter] = useState('');
   const [garageFilter, setGarageFilter] = useState('');
 
-  const API_BASE_URL = 'http://localhost:3001/api/properties';
+  const API_BASE_URL = 'http://localhost:3001/api/properties?status=for%20sale';
   useEffect(() => {
     fetch(API_BASE_URL)
       .then(res => res.json())
@@ -53,13 +53,14 @@ function Buying() {
       <div className="header">
         <ul className="nav" style={{ listStyleType: 'none'}}>
           <li><img src={logo} alt="Logo" className="logo" /></li>
-          <Link to="/HomePage"><li>Home</li></Link>
+          <Link to='/HomePage'><li>Home</li></Link>
           <Link to="/aboutus"><li>About Us</li></Link>
           <li>Projects</li>
-          <li>Contact Us</li>
+          <Link to='/Contactus'><li>Contact Us</li></Link>
         </ul>
       </div>
 
+  
       {/* Hero Section */}
       <section className="buying-hero-section">
         <div className="buying-hero-overlay" />

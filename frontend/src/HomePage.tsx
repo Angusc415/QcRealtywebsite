@@ -171,11 +171,11 @@ function HomePage() {
     <div className="footer-section">
       <h3>Quick Links</h3>
       <ul className="footer-links">
-        <li><a href="#">Home</a></li>
-        <li className="listend"><a href="#">About Us</a></li>
-        <li><a href="#">Properties</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><Link to="/HomePage">Home</Link></li>
+        <li className="listend"><Link to="/aboutus">About Us</Link></li>
+        <li><Link to="/buying">Properties</Link></li>
+        <li><Link to="/Renting">Services</Link></li>
+        <li><Link to="/Contactus">Contact</Link></li>
       </ul>
     </div>
     
